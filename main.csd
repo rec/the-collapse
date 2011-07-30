@@ -5,11 +5,20 @@
 </CsOptions>
 
 <CsInstruments>
-#include "instruments.csd"
+
+sr     = 44100
+ksmps  = 32
+nchnls = 2
+0dbfs  = 1
+
+#include "instruments/main.csd"
+
 </CsInstruments>
 
 <CsScore>
-#include "score.csd"
+
+#include "score/main.csd"
+
 </CsScore>
 
 </CsoundSynthesizer>

@@ -1,3 +1,5 @@
+;; Score for section 1 of the collapse!
+
 ;inst st end skip
 
 ;initial recitation of turning, at specified loop points
@@ -54,4 +56,3 @@ i. . . .
 i. . . 45
 
 e
-
