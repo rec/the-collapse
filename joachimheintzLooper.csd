@@ -33,9 +33,12 @@ do:
 endin
 
 instr 2 ;playing the sections
-iskip = p4
-a1 soundin "samples/turningloop.aif", iskip
-outs a1, a1
+	;p field to adjust the skip time
+	iskip = p4
+	
+	;ktrans linseg 1, 5, 2, 10, -2 /*take out original pitch shift*/
+	a1 diskin2 "samples/turningloop.aif", /*ktrans*/ 1, iskip, 0, 0, 32
+	outs a1, a1
 endin
 
 </CsInstruments>
@@ -77,19 +80,3 @@ i 1 0 100
 </bsbPanel>
 <bsbPresets>
 </bsbPresets>
-<MacOptions>
-Version: 3
-Render: Real
-Ask: Yes
-Functions: ioObject
-Listing: Window
-WindowBounds: 897 267 535 279
-CurrentView: io
-IOViewEdit: On
-Options:
-</MacOptions>
-
-<MacGUI>
-ioView nobackground {59367, 11822, 65535}
-ioSlider {5, 5} {20, 100} 0.000000 1.000000 0.000000 slider1
-</MacGUI>

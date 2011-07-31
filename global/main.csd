@@ -1,34 +1,11 @@
-<CsoundSynthesizer>
-
-<CsOptions>
--odac
-</CsOptions>
-
-<CsInstruments>
-
-sr     = 44100
-ksmps  = 32
-nchnls = 2
-0dbfs  = 1
-
-#include "instruments/main.csd"
-
-</CsInstruments>
-
-<CsScore>
-
-#include "score/main.csd"
-
-</CsScore>
-
-</CsoundSynthesizer>
+#include "instruments/turning/main.csd"
 <bsbPanel>
  <label>Widgets</label>
  <objectName/>
  <x>0</x>
  <y>0</y>
- <width>30</width>
- <height>105</height>
+ <width>0</width>
+ <height>1072693248</height>
  <visible>true</visible>
  <uuid/>
  <bgcolor mode="nobackground">
@@ -42,7 +19,7 @@ nchnls = 2
   <y>5</y>
   <width>20</width>
   <height>100</height>
-  <uuid>{b2230b50-8c55-4e03-aab6-ec4cf709140a}</uuid>
+  <uuid>{5bb0ddf1-a6f5-428c-b32c-011c00639fb1}</uuid>
   <visible>true</visible>
   <midichan>0</midichan>
   <midicc>-3</midicc>
