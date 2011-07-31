@@ -22,13 +22,14 @@ nchnls = 2
 </CsScore>
 
 </CsoundSynthesizer>
+
 <bsbPanel>
  <label>Widgets</label>
  <objectName/>
- <x>0</x>
- <y>0</y>
- <width>30</width>
- <height>105</height>
+ <x>5</x>
+ <y>236</y>
+ <width>0</width>
+ <height>0</height>
  <visible>true</visible>
  <uuid/>
  <bgcolor mode="nobackground">
@@ -57,3 +58,7 @@ nchnls = 2
 </bsbPanel>
 <bsbPresets>
 </bsbPresets>
+<MacGUI>
+ioView nobackground {59367, 11822, 65535}
+ioSlider {5, 5} {20, 100} 0.000000 1.000000 0.000000 slider1
+</MacGUI>
