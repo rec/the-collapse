@@ -1,4 +1,4 @@
-instr 1
+instr TurningSampler
   ;p field to adjust the skip time
   iskiptim = p4
 
