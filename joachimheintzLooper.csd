@@ -1,5 +1,6 @@
 <CsoundSynthesizer>
 <CsOptions>
+
 ;thanks for help from Joachim Heintz! jh@joachimheintz.de
 </CsOptions>
 <CsInstruments>
@@ -32,51 +33,15 @@ do:
    event_i "i", 2, 0, idur, istart ;call instr 2
 endin
 
+
 instr 2 ;playing the sections
-	;p field to adjust the skip time
-	iskip = p4
-	
-	;ktrans linseg 1, 5, 2, 10, -2 /*take out original pitch shift*/
-	a1 diskin2 "samples/turningloop.aif", /*ktrans*/ 1, iskip, 0, 0, 32
-	outs a1, a1
+iskip = p4
+a1 soundin "samples/turningloop.aif", iskip
+outs a1, a1
 endin
 
 </CsInstruments>
 <CsScore>
 i 1 0 100
 </CsScore>
-</CsoundSynthesizer><bsbPanel>
- <label>Widgets</label>
- <objectName/>
- <x>897</x>
- <y>267</y>
- <width>535</width>
- <height>279</height>
- <visible>true</visible>
- <uuid/>
- <bgcolor mode="nobackground">
-  <r>231</r>
-  <g>46</g>
-  <b>255</b>
- </bgcolor>
- <bsbObject version="2" type="BSBVSlider">
-  <objectName>slider1</objectName>
-  <x>5</x>
-  <y>5</y>
-  <width>20</width>
-  <height>100</height>
-  <uuid>{5cd21e19-3e10-42a4-bab1-1901383e2372}</uuid>
-  <visible>true</visible>
-  <midichan>0</midichan>
-  <midicc>-3</midicc>
-  <minimum>0.00000000</minimum>
-  <maximum>1.00000000</maximum>
-  <value>0.00000000</value>
-  <mode>lin</mode>
-  <mouseControl act="jump">continuous</mouseControl>
-  <resolution>-1.00000000</resolution>
-  <randomizable group="0">false</randomizable>
- </bsbObject>
-</bsbPanel>
-<bsbPresets>
-</bsbPresets>
+</CsoundSynthesizer>
