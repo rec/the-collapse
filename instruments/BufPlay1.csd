@@ -1,4 +1,4 @@
-<CsoundSynthesizer>
+ <CsoundSynthesizer>
 <CsOptions>
 -d -odac
 </CsOptions>
@@ -8,6 +8,11 @@ ksmps = 32
 nchnls = 1
 0dbfs = 1
 
+
+;Note!
+;orginally in order for this instrument to work you must first start 'inst 1' (Sample Table) before running inst 2 (Shuffle Duration)
+;now both instruments are combined into instr "bufplayer"
+		
 
   opcode BufPlay1, ak, ikkkkkk
 ift, kplay, kspeed, kvol, kstart, kend, kwrap xin
@@ -98,11 +103,11 @@ ival      tab_i     indx, ifttmp
   endop
 
 
-instr 1
-gift, ilen BufFiCtNd1 "turningloop.aif" ;creates a non-deferred function table containing the sample
-endin
+instr SampleTable1, bufplayer ;(Sample Table)
+gift, ilen BufFiCtNd1 "../samples/turningloop.aif" ;creates a non-deferred function table containing the sample
+;endin
 
-instr 3
+;instr ShufDur2, bufplayer ;(Shuffle Duration)
 ;Notes
 ;	use a gate to cycle through play back of samples at different rates 
 ;		each sampple has a start and end time
@@ -145,18 +150,23 @@ endin
 
 </CsInstruments>
 <CsScore>
-;i1 must play first!
-i 1 0 41
+;originally i1 must play first!
+;i "SampleTable1" 0 41
+;i "ShufDur2" 0 10
 
-i 3 0 10
+;now bufplayer runs both instruments together
+i "bufplayer" 0 10
+
 </CsScore>
-</CsoundSynthesizer><bsbPanel>
+</CsoundSynthesizer>
+;*/
+<bsbPanel>
  <label>Widgets</label>
  <objectName/>
- <x>897</x>
- <y>404</y>
- <width>535</width>
- <height>142</height>
+ <x>72</x>
+ <y>179</y>
+ <width>400</width>
+ <height>200</height>
  <visible>true</visible>
  <uuid/>
  <bgcolor mode="nobackground">
@@ -170,7 +180,7 @@ i 3 0 10
   <y>5</y>
   <width>20</width>
   <height>100</height>
-  <uuid>{98efcca7-472f-4644-82d4-99f2d2479c8c}</uuid>
+  <uuid>{31d5150b-ca91-42a7-b10b-593f888f03ac}</uuid>
   <visible>true</visible>
   <midichan>0</midichan>
   <midicc>-3</midicc>
@@ -185,19 +195,3 @@ i 3 0 10
 </bsbPanel>
 <bsbPresets>
 </bsbPresets>
-<MacOptions>
-Version: 3
-Render: Real
-Ask: Yes
-Functions: ioObject
-Listing: Window
-WindowBounds: 897 404 535 142
-CurrentView: io
-IOViewEdit: On
-Options:
-</MacOptions>
-
-<MacGUI>
-ioView nobackground {59367, 11822, 65535}
-ioSlider {5, 5} {20, 100} 0.000000 1.000000 0.000000 slider1
-</MacGUI>
