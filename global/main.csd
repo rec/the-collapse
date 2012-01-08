@@ -1,8 +1,4 @@
-;; Score for section 1 of the collapse!
-
-i 1 0 100
-
-e
+#include "instruments/turning/main.csd"
 <bsbPanel>
  <label>Widgets</label>
  <objectName/>
@@ -23,7 +19,7 @@ e
   <y>5</y>
   <width>20</width>
   <height>100</height>
-  <uuid>{6d30d3a9-bf20-47fd-889d-56486396a751}</uuid>
+  <uuid>{5bb0ddf1-a6f5-428c-b32c-011c00639fb1}</uuid>
   <visible>true</visible>
   <midichan>0</midichan>
   <midicc>-3</midicc>

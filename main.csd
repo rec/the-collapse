@@ -1,15 +1,34 @@
-;; Score for section 1 of the collapse!
+<CsoundSynthesizer>
 
-i 1 0 100
+<CsOptions>
+-odac
+</CsOptions>
 
-e
+<CsInstruments>
+
+sr     = 44100
+ksmps  = 32
+nchnls = 2
+0dbfs  = 1
+
+#include "instruments/main.csd"
+
+</CsInstruments>
+
+<CsScore>
+
+#include "score/main.csd"
+
+</CsScore>
+
+</CsoundSynthesizer>
 <bsbPanel>
  <label>Widgets</label>
  <objectName/>
  <x>0</x>
  <y>0</y>
- <width>0</width>
- <height>1072693248</height>
+ <width>30</width>
+ <height>105</height>
  <visible>true</visible>
  <uuid/>
  <bgcolor mode="nobackground">
@@ -23,7 +42,7 @@ e
   <y>5</y>
   <width>20</width>
   <height>100</height>
-  <uuid>{6d30d3a9-bf20-47fd-889d-56486396a751}</uuid>
+  <uuid>{b2230b50-8c55-4e03-aab6-ec4cf709140a}</uuid>
   <visible>true</visible>
   <midichan>0</midichan>
   <midicc>-3</midicc>
